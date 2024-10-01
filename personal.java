@@ -8,11 +8,12 @@ public class personal {
 	private int celular;
 	private String hora_ingreso;
 	private String hora_salida;
+	private String genero;
 	public personal() {
 		// TODO Auto-generated constructor stub
 	}
 	public personal(double salario, String nombre, boolean contrato, int ci, int celular, String hora_ingreso,
-			String hora_salida) {
+			String hora_salida, String genero) {
 		this.salario = salario;
 		this.nombre = nombre;
 		this.contrato = contrato;
@@ -20,6 +21,7 @@ public class personal {
 		this.celular = celular;
 		this.hora_ingreso = hora_ingreso;
 		this.hora_salida = hora_salida;
+		this.genero = genero;
 	}
 	public double getSalario() {
 		return salario;
@@ -62,6 +64,12 @@ public class personal {
 	}
 	public void setHora_salida(String hora_salida) {
 		this.hora_salida = hora_salida;
+	}
+	public String getGenero() {
+		return genero;
+	}
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
