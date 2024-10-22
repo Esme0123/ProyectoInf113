@@ -5,6 +5,7 @@ public class alimento extends inventario{
 	public alimento() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public alimento(String nom_item, int cantidad_disponible) {
 		super(nom_item, cantidad_disponible);
 		// TODO Auto-generated constructor stub

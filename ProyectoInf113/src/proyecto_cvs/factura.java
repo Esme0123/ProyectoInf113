@@ -6,18 +6,19 @@ public class factura {
 	private double monto_total;
 	private pedido pedido;
 	private cliente cliente;
-	private itemFacturas [] listafacturas;
+	private itemPedido itemPedido;
 	public factura() {
 		// TODO Auto-generated constructor stub
 	}
+	
 	public factura(int num_factura, String f_emision, double monto_total, proyecto_cvs.pedido pedido,
-			proyecto_cvs.cliente cliente, itemFacturas[] listafacturas) {
+			proyecto_cvs.cliente cliente, proyecto_cvs.itemPedido itemPedido) {
 		this.num_factura = num_factura;
 		this.f_emision = f_emision;
 		this.monto_total = monto_total;
 		this.pedido = pedido;
 		this.cliente = cliente;
-		this.listafacturas = listafacturas;
+		this.itemPedido = itemPedido;
 	}
 	public int getNum_factura() {
 		return num_factura;
@@ -49,11 +50,12 @@ public class factura {
 	public void setCliente(cliente cliente) {
 		this.cliente = cliente;
 	}
-	public itemFacturas[] getListafacturas() {
-		return listafacturas;
+	public itemPedido getItemPedido() {
+		return itemPedido;
 	}
-	public void setListafacturas(itemFacturas[] listafacturas) {
-		this.listafacturas = listafacturas;
+
+	public void setItemPedido(itemPedido itemPedido) {
+		this.itemPedido = itemPedido;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

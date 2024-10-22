@@ -1,37 +1,29 @@
 package proyecto_cvs;
 
-public class empleado {
-	private String nombre;
-	private String apellido;
+public class empleado extends persona{
 	private String rol;
 	private String identificacion;
-	private int celular;
 	private String h_ingreso;
 	private String h_salida;
+	private int id_persona;
 	public empleado() {
 		// TODO Auto-generated constructor stub
 	}
-	public empleado(String nombre, String apellido, String rol, String identificacion, int celular, String h_ingreso,
+	public empleado(String nombre, String apellido, int celular, String rol, String identificacion, String h_ingreso,
 			String h_salida) {
-		this.nombre = nombre;
-		this.apellido = apellido;
+		super(nombre, apellido, celular);
 		this.rol = rol;
 		this.identificacion = identificacion;
-		this.celular = celular;
 		this.h_ingreso = h_ingreso;
 		this.h_salida = h_salida;
 	}
-	public String getNombre() {
-		return nombre;
-	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	
+	public empleado(String rol, String identificacion, String h_ingreso, String h_salida, int id_persona) {
+		this.rol = rol;
+		this.identificacion = identificacion;
+		this.h_ingreso = h_ingreso;
+		this.h_salida = h_salida;
+		this.id_persona = id_persona;
 	}
 	public String getRol() {
 		return rol;
@@ -45,12 +37,6 @@ public class empleado {
 	public void setIdentificacion(String identificacion) {
 		this.identificacion = identificacion;
 	}
-	public int getCelular() {
-		return celular;
-	}
-	public void setCelular(int celular) {
-		this.celular = celular;
-	}
 	public String getH_ingreso() {
 		return h_ingreso;
 	}
@@ -62,6 +48,12 @@ public class empleado {
 	}
 	public void setH_salida(String h_salida) {
 		this.h_salida = h_salida;
+	}
+	public int getId_persona() {
+		return id_persona;
+	}
+	public void setId_persona(int id_persona) {
+		this.id_persona = id_persona;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
