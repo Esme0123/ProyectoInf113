@@ -1,35 +1,23 @@
 package proyecto_cvs;
 
-public class cliente {
-	private String nombre;
-	private String apellido;
-	private int celular;
+public class cliente extends persona{
+	private int ci;
 	public cliente() {
 		// TODO Auto-generated constructor stub
 	}
-	public cliente(String nombre, String apellido, int celular) {
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.celular = celular;
+	public cliente(String nombre, String apellido, int celular, int ci) {
+		super(nombre, apellido, celular);
+		this.ci = ci;
 	}
-	public String getNombre() {
-		return nombre;
+
+	public int getCi() {
+		return ci;
 	}
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	public void setCi(int ci) {
+		this.ci = ci;
 	}
-	public String getApellido() {
-		return apellido;
-	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
-	}
-	public int getCelular() {
-		return celular;
-	}
-	public void setCelular(int celular) {
-		this.celular = celular;
-	}
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

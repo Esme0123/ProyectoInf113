@@ -5,7 +5,6 @@ public class pedido {
 	private String fecha;
 	private boolean estado;
 	private cliente cliente;
-	private itemPedido [] listapedidos;
 	private double total;
 	public pedido() {
 		// TODO Auto-generated constructor stub
@@ -16,10 +15,10 @@ public class pedido {
 		this.fecha = fecha;
 		this.estado = estado;
 		this.cliente = cliente;
-		this.listapedidos = listapedidos;
 		this.total = total;
 	}
 
+	
 	public int getNum_pedido() {
 		return num_pedido;
 	}
@@ -43,12 +42,6 @@ public class pedido {
 	}
 	public void setCliente(cliente cliente) {
 		this.cliente = cliente;
-	}
-	public itemPedido[] getListapedidos() {
-		return listapedidos;
-	}
-	public void setListapedidos(itemPedido[] listapedidos) {
-		this.listapedidos = listapedidos;
 	}
 	public double getTotal() {
 		return total;
