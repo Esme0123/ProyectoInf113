@@ -6,7 +6,7 @@ public class principal {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-<<<<<<< HEAD
+
 		conexion c1=new conexion();
 		cliente cl1=new cliente();
 		cl1.setApellido("Mejia");
@@ -17,29 +17,28 @@ public class principal {
 		Scanner leer=new Scanner(System.in);
 		System.out.print("Ingresa el rol del empleado: ");
 		String e1=leer.nextLine();
-		/*System.out.print("Ingresa la identificacion del empleado: ");
-		String e1=leer.nextLine();
-		System.out.print("Ingresa la hora de ingreso: ");*/
-		empleado empleado1=new empleado(e1,"administrador","15:00","18:00",1);
+		System.out.print("Ingresa la identificacion del empleado: ");
+		String e1_1=leer.nextLine();
+		System.out.print("Ingresa la hora de ingreso: ");
+		empleado empleado1=new empleado(e1_1,"administrador","15:00","18:00",1);
 		empleadoDB empDB=new empleadoDB();
 		empDB.agregarEmpleado(empleado1);
-=======
+
 		//conexion c1=new conexion();
 		conexion.conectar();
-		try (Scanner leer = new Scanner(System.in)) {
+		try (leer) {  // ¿que se intenta declarar aqui?
 			System.out.print("Ingresa el rol del empleado: ");
-			String e1=leer.nextLine();
+			String e1_2=leer.nextLine();
 			System.out.print("Ingresa la identificacion del empleado: ");
 			String e11=leer.nextLine();
 			System.out.print("Ingresa la hora de ingreso: ");
 			String e111=leer.nextLine();
 			System.out.print("Ingresa la hora de salida: ");
 			String e1111=leer.nextLine();
-			empleado empleado1=new empleado(e1,e11,e111,e1111,1);
-			empleadoDB empDB=new empleadoDB();
-			empDB.agregarEmpleado(empleado1);
+			empleado empleado2=new empleado(e1_2,e11,e111,e1111,1);
+			empleadoDB empDB_1=new empleadoDB();
+			empDB_1.agregarEmpleado(empleado2);
 		}
->>>>>>> 608b57a72a8f7e1f9262e0661a34ad6b9fe0499e
 	}
 
 }
