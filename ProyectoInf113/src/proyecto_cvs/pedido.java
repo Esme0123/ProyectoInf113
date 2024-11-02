@@ -1,29 +1,24 @@
 package proyecto_cvs;
 
 public class pedido {
-	private int num_pedido;
 	private String fecha;
 	private boolean estado;
-	private cliente cliente;
 	private double total;
+	private int id_cliente;
 	public pedido() {
 		// TODO Auto-generated constructor stub
 	}
-	public pedido(int num_pedido, String fecha, boolean estado, proyecto_cvs.cliente cliente, itemPedido[] listapedidos,
-			double total) {
-		this.num_pedido = num_pedido;
+	public pedido(String fecha, boolean estado, double total, int id_cliente) {
 		this.fecha = fecha;
 		this.estado = estado;
-		this.cliente = cliente;
 		this.total = total;
+		this.id_cliente = id_cliente;
 	}
-
-	
-	public int getNum_pedido() {
-		return num_pedido;
+	public int getId_cliente() {
+		return id_cliente;
 	}
-	public void setNum_pedido(int num_pedido) {
-		this.num_pedido = num_pedido;
+	public void setId_cliente(int id_cliente) {
+		this.id_cliente = id_cliente;
 	}
 	public String getFecha() {
 		return fecha;
@@ -36,12 +31,6 @@ public class pedido {
 	}
 	public void setEstado(boolean estado) {
 		this.estado = estado;
-	}
-	public cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(cliente cliente) {
-		this.cliente = cliente;
 	}
 	public double getTotal() {
 		return total;

@@ -1,30 +1,30 @@
 package proyecto_cvs;
 
 public class factura {
-	private int num_factura;
 	private String f_emision;
 	private double monto_total;
-	private pedido pedido;
-	private cliente cliente;
-	private itemPedido itemPedido;
+	private int id_pedido;
+	private int id_itemPedido;
 	public factura() {
 		// TODO Auto-generated constructor stub
 	}
-	
-	public factura(int num_factura, String f_emision, double monto_total, proyecto_cvs.pedido pedido,
-			proyecto_cvs.cliente cliente, proyecto_cvs.itemPedido itemPedido) {
-		this.num_factura = num_factura;
+	public factura(String f_emision, double monto_total, int id_pedido, int id_itemPedido) {
 		this.f_emision = f_emision;
 		this.monto_total = monto_total;
-		this.pedido = pedido;
-		this.cliente = cliente;
-		this.itemPedido = itemPedido;
+		this.id_pedido = id_pedido;
+		this.id_itemPedido = id_itemPedido;
 	}
-	public int getNum_factura() {
-		return num_factura;
+	public int getId_pedido() {
+		return id_pedido;
 	}
-	public void setNum_factura(int num_factura) {
-		this.num_factura = num_factura;
+	public void setId_pedido(int id_pedido) {
+		this.id_pedido = id_pedido;
+	}
+	public int getId_itemPedido() {
+		return id_itemPedido;
+	}
+	public void setId_itemPedido(int id_itemPedido) {
+		this.id_itemPedido = id_itemPedido;
 	}
 	public String getF_emision() {
 		return f_emision;
@@ -37,25 +37,6 @@ public class factura {
 	}
 	public void setMonto_total(double monto_total) {
 		this.monto_total = monto_total;
-	}
-	public pedido getPedido() {
-		return pedido;
-	}
-	public void setPedido(pedido pedido) {
-		this.pedido = pedido;
-	}
-	public cliente getCliente() {
-		return cliente;
-	}
-	public void setCliente(cliente cliente) {
-		this.cliente = cliente;
-	}
-	public itemPedido getItemPedido() {
-		return itemPedido;
-	}
-
-	public void setItemPedido(itemPedido itemPedido) {
-		this.itemPedido = itemPedido;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

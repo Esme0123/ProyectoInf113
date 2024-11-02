@@ -2,33 +2,33 @@ package proyecto_cvs;
 
 public class itemPedido {
 	private int cantidad;
-	private producto producto;
-	private pedido pedido;
+	private int id_producto;
+	private int id_pedido;
 	public itemPedido() {
 		// TODO Auto-generated constructor stub
 	}
-	public itemPedido(int cantidad, proyecto_cvs.producto producto, proyecto_cvs.pedido pedido) {
+	public itemPedido(int cantidad, int id_producto, int id_pedido) {
 		this.cantidad = cantidad;
-		this.producto = producto;
-		this.pedido = pedido;
+		this.id_producto = id_producto;
+		this.id_pedido = id_pedido;
+	}
+	public int getId_producto() {
+		return id_producto;
+	}
+	public void setId_producto(int id_producto) {
+		this.id_producto = id_producto;
+	}
+	public int getId_pedido() {
+		return id_pedido;
+	}
+	public void setId_pedido(int id_pedido) {
+		this.id_pedido = id_pedido;
 	}
 	public int getCantidad() {
 		return cantidad;
 	}
 	public void setCantidad(int cantidad) {
 		this.cantidad = cantidad;
-	}
-	public producto getProducto() {
-		return producto;
-	}
-	public void setProducto(producto producto) {
-		this.producto = producto;
-	}
-	public pedido getPedido() {
-		return pedido;
-	}
-	public void setPedido(pedido pedido) {
-		this.pedido = pedido;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub

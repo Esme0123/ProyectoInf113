@@ -3,14 +3,20 @@ package proyecto_cvs;
 public class restaurante {
 	private String nombre;
 	private String direccion;
-	private mesa [] lista_mesa;
+	private int id_mesa;
 	public restaurante() {
 		// TODO Auto-generated constructor stub
 	}
-	public restaurante(String nombre, String direccion, mesa[] lista_mesa) {
+	public restaurante(String nombre, String direccion, int id_mesa) {
 		this.nombre = nombre;
 		this.direccion = direccion;
-		this.lista_mesa = lista_mesa;
+		this.id_mesa = id_mesa;
+	}
+	public int getId_mesa() {
+		return id_mesa;
+	}
+	public void setId_mesa(int id_mesa) {
+		this.id_mesa = id_mesa;
 	}
 	public String getNombre() {
 		return nombre;
@@ -23,12 +29,6 @@ public class restaurante {
 	}
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
-	}
-	public mesa[] getLista_mesa() {
-		return lista_mesa;
-	}
-	public void setLista_mesa(mesa[] lista_mesa) {
-		this.lista_mesa = lista_mesa;
 	}
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
