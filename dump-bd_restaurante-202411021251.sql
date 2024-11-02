@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: bd_restaurante
 -- ------------------------------------------------------
--- Server version	5.5.5-10.4.32-MariaDB
+-- Server version	5.5.5-10.4.24-MariaDB
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -29,7 +29,7 @@ CREATE TABLE `acompanamientos` (
   PRIMARY KEY (`id_acompanamiento`),
   KEY `acompanamientos_hamburguesas_FK` (`id_hamburguesa`),
   CONSTRAINT `acompanamientos_hamburguesas_FK` FOREIGN KEY (`id_hamburguesa`) REFERENCES `hamburguesas` (`id_hamburguesa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -55,7 +55,7 @@ CREATE TABLE `alimentos` (
   PRIMARY KEY (`id_alimento`),
   KEY `alimentos_inventarios_FK` (`id_inventario`),
   CONSTRAINT `alimentos_inventarios_FK` FOREIGN KEY (`id_inventario`) REFERENCES `inventarios` (`id_inventario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -81,7 +81,7 @@ CREATE TABLE `clientes` (
   PRIMARY KEY (`id_cliente`),
   KEY `clientes_personas_FK` (`id_persona`),
   CONSTRAINT `clientes_personas_FK` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -107,7 +107,7 @@ CREATE TABLE `consumible` (
   PRIMARY KEY (`id_consumible`),
   KEY `consumible_inventarios_FK` (`id_inventario`),
   CONSTRAINT `consumible_inventarios_FK` FOREIGN KEY (`id_inventario`) REFERENCES `inventarios` (`id_inventario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -136,7 +136,7 @@ CREATE TABLE `empleados` (
   PRIMARY KEY (`id_empleado`),
   KEY `empleados_personas_FK` (`id_persona`),
   CONSTRAINT `empleados_personas_FK` FOREIGN KEY (`id_persona`) REFERENCES `personas` (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -145,6 +145,7 @@ CREATE TABLE `empleados` (
 
 LOCK TABLES `empleados` WRITE;
 /*!40000 ALTER TABLE `empleados` DISABLE KEYS */;
+INSERT INTO `empleados` VALUES (2,'Cocinero','administrador','15:00:00','18:00:00',1);
 /*!40000 ALTER TABLE `empleados` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -160,16 +161,13 @@ CREATE TABLE `facturas` (
   `f_emision` date NOT NULL,
   `monto_total` double NOT NULL,
   `id_pedido` int(11) NOT NULL,
-  `id_cliente` int(11) NOT NULL,
   `id_itemPedido` int(11) NOT NULL,
   PRIMARY KEY (`id_factura`),
   KEY `facturas_pedidos_FK` (`id_pedido`),
   KEY `facturas_itemspedidos_FK` (`id_itemPedido`),
-  KEY `facturas_clientes_FK` (`id_cliente`),
-  CONSTRAINT `facturas_clientes_FK` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`),
   CONSTRAINT `facturas_itemspedidos_FK` FOREIGN KEY (`id_itemPedido`) REFERENCES `itemspedidos` (`id_itemPedido`),
   CONSTRAINT `facturas_pedidos_FK` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -195,7 +193,7 @@ CREATE TABLE `hamburguesas` (
   PRIMARY KEY (`id_hamburguesa`),
   KEY `hamburguesas_productos_FK` (`id_producto`),
   CONSTRAINT `hamburguesas_productos_FK` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,9 +215,9 @@ DROP TABLE IF EXISTS `inventarios`;
 CREATE TABLE `inventarios` (
   `id_inventario` int(11) NOT NULL AUTO_INCREMENT,
   `nom_item` varchar(100) NOT NULL,
-  `can_disponible` int(11) NOT NULL,
+  `cantidad_disponible` int(11) NOT NULL,
   PRIMARY KEY (`id_inventario`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -248,7 +246,7 @@ CREATE TABLE `itemspedidos` (
   KEY `itemspedidos_productos_FK` (`id_producto`),
   CONSTRAINT `itemspedidos_pedidos_FK` FOREIGN KEY (`id_pedido`) REFERENCES `pedidos` (`id_pedido`),
   CONSTRAINT `itemspedidos_productos_FK` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -272,7 +270,7 @@ CREATE TABLE `mesas` (
   `capacidad` int(11) NOT NULL,
   `estado` tinyint(1) NOT NULL,
   PRIMARY KEY (`id_mesa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -300,7 +298,7 @@ CREATE TABLE `pedidos` (
   PRIMARY KEY (`id_pedido`),
   KEY `pedidos_clientes_FK` (`id_cliente`),
   CONSTRAINT `pedidos_clientes_FK` FOREIGN KEY (`id_cliente`) REFERENCES `clientes` (`id_cliente`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,7 +323,7 @@ CREATE TABLE `personas` (
   `paterno` varchar(50) NOT NULL,
   `celular` int(11) NOT NULL,
   PRIMARY KEY (`id_persona`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -334,6 +332,7 @@ CREATE TABLE `personas` (
 
 LOCK TABLES `personas` WRITE;
 /*!40000 ALTER TABLE `personas` DISABLE KEYS */;
+INSERT INTO `personas` VALUES (1,'Mario','Pacheco',73014589);
 /*!40000 ALTER TABLE `personas` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -349,7 +348,7 @@ CREATE TABLE `productos` (
   `nombre` varchar(100) NOT NULL,
   `precio` double NOT NULL,
   PRIMARY KEY (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -375,7 +374,7 @@ CREATE TABLE `refrescos` (
   PRIMARY KEY (`id_refresco`),
   KEY `refrescos_productos_FK` (`id_producto`),
   CONSTRAINT `refrescos_productos_FK` FOREIGN KEY (`id_producto`) REFERENCES `productos` (`id_producto`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -402,7 +401,7 @@ CREATE TABLE `restaurantes` (
   PRIMARY KEY (`id_restaurante`),
   KEY `restaurantes_mesas_FK` (`id_mesa`),
   CONSTRAINT `restaurantes_mesas_FK` FOREIGN KEY (`id_mesa`) REFERENCES `mesas` (`id_mesa`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -427,4 +426,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-10-15 16:37:28
+-- Dump completed on 2024-11-02 12:51:49
