@@ -5,6 +5,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import proyecto_cvs.cliente;
+
 public class clienteDB {
 	private Connection conexion;
 	
