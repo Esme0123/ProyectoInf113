@@ -30,7 +30,7 @@ public class mesa {
 	public void setEstado(boolean estado) {
 		this.estado = estado;
 	}
-	public void reservar() {
+	/*public void reservar() {
 		if(!estado) {
 			estado=true;
 			System.out.println("La mesa "+num+" ha sido reservada.");
@@ -47,7 +47,7 @@ public class mesa {
 		else {
             System.out.println("La mesa " +num+ " ya está libre.");
         }
-	}
+	}*/
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
