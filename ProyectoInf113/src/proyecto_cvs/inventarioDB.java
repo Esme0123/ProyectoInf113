@@ -2,10 +2,10 @@ package proyecto_cvs;
 
 import java.sql.*;
 
-public class mesaDB {
+public class inventarioDB {
 	private Connection conexion;
 
-	public mesaDB() {
+	public inventarioDB() {
 		try {
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_restaurante", "root", "");
 		} catch (Exception e) {
@@ -13,11 +13,11 @@ public class mesaDB {
 		}
 	}
 
-	public void agregarMesa(mesa mesa) {
-	String sql = "INSERT INTO mesas(capacidad, estado) VALUES(?, ?)";
+	public void agregarInventario(inventario inventario) {
+	String sql = "INSERT INTO inventarios(nom_item, cantidad_disponible) VALUES(?, ?)";
 		try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
-			parametro.setInt(1, mesa.getCapacidad());
-			parametro.setBoolean(2, mesa.isEstado());
+			parametro.setString(1, inventario.getNom_item());
+			parametro.setInt(2, inventario.getCantidad_disponible());
 			parametro.executeUpdate();
 		} catch (Exception e) {
 		    e.printStackTrace();
@@ -25,11 +25,11 @@ public class mesaDB {
 	}
 	
 	//Edición de propiedad
-	public void editarMesa(mesa mesa, int id) {
-        String sql = "UPDATE mesas SET capacidad=?, estado=? WHERE id_mesa = ?";
+	public void editarInventario(inventario inventario, int id) {
+        String sql = "UPDATE inventarios SET nom_item=?, cantidad_disponible=? WHERE id_inventario = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
-        	parametro.setInt(1, mesa.getCapacidad());
-			parametro.setBoolean(2, mesa.isEstado());
+        	parametro.setString(1, inventario.getNom_item());
+			parametro.setInt(2, inventario.getCantidad_disponible());
             parametro.setInt(3, id);
             parametro.executeUpdate();
         } catch (SQLException e) {
@@ -38,8 +38,8 @@ public class mesaDB {
     }
 	
     // Eliminar una propiedad
-    public void eliminarMesa(int id) {
-        String sql = "DELETE FROM mesas WHERE id_mesa = ?";
+    public void eliminarInventario(int id) {
+        String sql = "DELETE FROM inventarios WHERE id_inventario = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
             parametro.setInt(1, id);
             parametro.executeUpdate();
@@ -49,21 +49,18 @@ public class mesaDB {
     }
     
     // Obtener lista de propiedades
-    public mesa obtenerMesa(int id) {
-        String sql = "SELECT * FROM mesas WHERE id_mesa = ?";
+    public inventario obtenerInventario(int id) {
+        String sql = "SELECT * FROM inventarios WHERE id_inventario = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
             parametro.setInt(1, id);
             ResultSet rs = parametro.executeQuery();
             if (rs.next()) {
-            	mesa mesa = new mesa();
-            	mesa.setCapacidad(rs.getInt("capacidad"));
-            	mesa.setEstado(rs.getBoolean("estado"));
-                return mesa;
+            	inventario inventario = new inventario(rs.getString("nom_item"), rs.getInt("cantidad_disponible"));
+            	return inventario;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
     }
-	
 }
