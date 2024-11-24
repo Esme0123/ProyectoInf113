@@ -70,4 +70,26 @@ public class pedidoDB {
         }
         return null;
     }
+    public double calcularPrecio(int id_pedido) {
+        String sql = """
+            SELECT SUM(ip.cantidad * p.precio) AS total
+            FROM item_pedido ip
+            INNER JOIN producto p ON ip.id_producto = p.id_producto
+            WHERE ip.id_pedido = ?
+        """;
+        double total = 0.0;
+
+        try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
+            parametro.setInt(1, id_pedido); 
+            ResultSet rs = parametro.executeQuery();
+            if (rs.next()) {
+                total = rs.getDouble("total"); // Recupera el total calculado
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return total;
+    }
+
 }
