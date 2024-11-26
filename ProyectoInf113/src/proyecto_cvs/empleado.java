@@ -2,40 +2,49 @@ package proyecto_cvs;
 
 public class empleado extends persona{
 	private String rol;
-	private String identificacion;
+	private String name_user;
 	private String h_ingreso;
 	private String h_salida;
-	private int id_persona;
+	private String password;
+	
 	public empleado() {
 		// TODO Auto-generated constructor stub
 	}
-	public empleado(String nombre, String apellido, int celular, String rol, String identificacion, String h_ingreso,
-			String h_salida) {
+	public empleado(String nombre, String apellido, int celular, String rol, String name_user, String h_ingreso,
+			String h_salida, String password) {
 		super(nombre, apellido, celular);
 		this.rol = rol;
-		this.identificacion = identificacion;
+		this.name_user = name_user;
 		this.h_ingreso = h_ingreso;
 		this.h_salida = h_salida;
+		this.password = password;
 	}
 	
-	public empleado(String rol, String identificacion, String h_ingreso, String h_salida, int id_persona) {
+	public empleado(String rol, String name_user, String h_ingreso, String h_salida, String password) {
 		this.rol = rol;
-		this.identificacion = identificacion;
+		this.name_user = name_user;
 		this.h_ingreso = h_ingreso;
 		this.h_salida = h_salida;
-		this.id_persona = id_persona;
+		this.password = password;
 	}
+	
+	public empleado(String rol, String name_user, String password) {
+		this.rol = rol;
+		this.name_user = name_user;
+		this.password = password;
+	}
+	
 	public String getRol() {
 		return rol;
 	}
 	public void setRol(String rol) {
 		this.rol = rol;
 	}
-	public String getIdentificacion() {
-		return identificacion;
+	public String getName_user() {
+		return name_user;
 	}
-	public void setIdentificacion(String identificacion) {
-		this.identificacion = identificacion;
+	public void setName_user(String name_user) {
+		this.name_user = name_user;
 	}
 	public String getH_ingreso() {
 		return h_ingreso;
@@ -49,15 +58,18 @@ public class empleado extends persona{
 	public void setH_salida(String h_salida) {
 		this.h_salida = h_salida;
 	}
-	public int getId_persona() {
-		return id_persona;
+	public String getPassword() {
+		return password;
 	}
-	public void setId_persona(int id_persona) {
-		this.id_persona = id_persona;
+	public void setPassword(String password) {
+		this.password = password;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public boolean verificarPassword(char[] passw) {
+		if(this.password.equals(new String(passw))) {
+			return true;
+		}
+		return false;
 	}
-
+	
 }
