@@ -74,13 +74,13 @@ public class interfaz extends JFrame {
 		JLabel nlbBienvenido = new JLabel("RESTAURANTE");
 		nlbBienvenido.setHorizontalAlignment(SwingConstants.CENTER);
 		nlbBienvenido.setFont(new Font("Mistral", Font.BOLD, 20));
-		nlbBienvenido.setBounds(143, 51, 128, 34);
+		nlbBienvenido.setBounds(143, 50, 128, 34);
 		contentPane.add(nlbBienvenido);
 		
-		JLabel nlbIsAutorized = new JLabel("New label");
-		nlbIsAutorized.setVisible(false);;
-		nlbIsAutorized.setBounds(46, 194, 232, 23);
-		contentPane.add(nlbIsAutorized);
+		JLabel lbl_IsAutorized = new JLabel("New label");
+		lbl_IsAutorized.setVisible(false);;
+		lbl_IsAutorized.setBounds(46, 194, 232, 23);
+		contentPane.add(lbl_IsAutorized);
 		
 		Tbx_password = new JPasswordField();
 		Tbx_password.setFont(new Font("Tahoma", Font.PLAIN, 15));
@@ -92,7 +92,7 @@ public class interfaz extends JFrame {
 		btnCliente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				//Metodo que consulta a la base de datos si existe el usuario (empleado o administrador)
-				VerificarEmpleado(Tbx_user_name, Tbx_password, nlbIsAutorized);
+				VerificarEmpleado(Tbx_user_name, Tbx_password, lbl_IsAutorized);
 			}
 		});
 		btnCliente.setBounds(309, 155, 89, 23);
