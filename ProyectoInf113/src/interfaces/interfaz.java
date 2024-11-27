@@ -1,7 +1,9 @@
-package proyecto_cvs;
+package interfaces;
+
+import proyecto_cvs.*;
+import db_clases.empleadoDB;
 
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;

@@ -1,7 +1,6 @@
 package proyecto_cvs;
 import java.util.Scanner;
-
-//import proyecto_cvs.*;
+import db_clases.*;
 public class principal {
 	
 	public static void main(String[] args) {

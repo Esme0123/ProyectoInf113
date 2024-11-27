@@ -1,5 +1,6 @@
-package proyecto_cvs;
+package db_clases;
 
+import proyecto_cvs.restaurante;
 import java.sql.*;
 
 public class restauranteDB {

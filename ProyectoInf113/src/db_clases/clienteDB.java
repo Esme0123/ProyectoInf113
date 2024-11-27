@@ -1,14 +1,16 @@
-package proyecto_cvs;
+package db_clases;
 
+import proyecto_cvs.cliente;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-public class pedidoDB {
+
+public class clienteDB {
 	private Connection conexion;
 	
-	public pedidoDB() {
+	public clienteDB() {
 		try {
 			conexion=DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_restaurante", "root", "");
 		} catch (Exception e) {
@@ -17,13 +19,11 @@ public class pedidoDB {
 	}
 	
 	//Creación de una nueva propiedad
-	public void agregarPedido(pedido prop) {
-		String sql="INSERT INTO pedidos(fecha,estado,total,id_cliente) VALUES(?,?,?,?)";
+	public void agregarCliente(cliente prop) {
+		String sql="INSERT INTO clientes(ci,id_persona) VALUES(?,?)";
 		try (PreparedStatement parametro=conexion.prepareStatement(sql)){
-			parametro.setString(1, prop.getFecha());
-			parametro.setBoolean(2, prop.isEstado());
-			parametro.setDouble(3, prop.getTotal());
-			parametro.setInt(4, prop.getId_cliente());
+			parametro.setInt(1, prop.getCi());
+			parametro.setInt(2, prop.getId_persona());
 			parametro.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -31,14 +31,12 @@ public class pedidoDB {
 	}
 	
 	//Edición de propiedad
-	public void editarPedido(pedido prop, int id) {
-        String sql = "UPDATE pedidos SET fecha=?, estado=?, total=?, id_cliente=? WHERE id = ?";
+	public void editarCliente(cliente prop, int id) {
+        String sql = "UPDATE clientes SET ci=?, id_persona=? WHERE id = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
-        	parametro.setString(1, prop.getFecha());
-			parametro.setBoolean(2, prop.isEstado());
-			parametro.setDouble(3, prop.getTotal());
-			parametro.setInt(4, prop.getId_cliente());
-            parametro.setInt(5, id);
+        	parametro.setInt(1, prop.getCi());
+			parametro.setInt(2, prop.getId_persona());
+            parametro.setInt(3, id);
             parametro.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -46,8 +44,8 @@ public class pedidoDB {
     }
 	
     // Eliminar una propiedad
-    public void eliminarPedido(int id) {
-        String sql = "DELETE FROM pedidos WHERE id = ?";
+    public void eliminarCliente(int id) {
+        String sql = "DELETE FROM clientes WHERE id = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
             parametro.setInt(1, id);
             parametro.executeUpdate();
@@ -57,13 +55,13 @@ public class pedidoDB {
     }
     
     // Obtener lista de propiedades
-    public pedido obtenerPedido(int id) {
-        String sql = "SELECT * FROM pedidos WHERE id_pedido = ?";
+    public cliente obtenerCliente(int id) {
+        String sql = "SELECT * FROM clientes WHERE id_cliente = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
             parametro.setInt(1, id);
             ResultSet rs = parametro.executeQuery();
             if (rs.next()) {
-                return new pedido(rs.getString("fecha"),rs.getBoolean("estado"),rs.getDouble("total"),rs.getInt("id_cliente"));
+                return new cliente(rs.getInt("ci"),rs.getInt("id_persona"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -71,3 +69,4 @@ public class pedidoDB {
         return null;
     }
 }
+

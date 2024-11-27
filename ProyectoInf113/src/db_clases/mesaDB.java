@@ -1,11 +1,12 @@
-package proyecto_cvs;
+package db_clases;
 
+import proyecto_cvs.mesa;
 import java.sql.*;
 
-public class itemPedidoDB {
+public class mesaDB {
 	private Connection conexion;
 
-	public itemPedidoDB() {
+	public mesaDB() {
 		try {
 			conexion = DriverManager.getConnection("jdbc:mysql://localhost:3306/bd_restaurante", "root", "");
 		} catch (Exception e) {
@@ -13,26 +14,24 @@ public class itemPedidoDB {
 		}
 	}
 
-	public void agregarItemPedido(itemPedido itemPedido) {
-		String sql = "INSERT INTO itemspedidos(cantidad, id_producto, id_pedido) VALUES(?, ?, ?)";
+	public void agregarMesa(mesa mesa) {
+	String sql = "INSERT INTO mesas(capacidad, estado) VALUES(?, ?)";
 		try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
-			parametro.setInt(1, itemPedido.getCantidad());
-			parametro.setInt(2, itemPedido.getId_producto());
-			parametro.setInt(3, itemPedido.getId_pedido());
+			parametro.setInt(1, mesa.getCapacidad());
+			parametro.setBoolean(2, mesa.isEstado());
 			parametro.executeUpdate();
 		} catch (Exception e) {
-			e.printStackTrace();
+		    e.printStackTrace();
 		}
 	}
 	
 	//Edición de propiedad
-	public void editarItemPedido(itemPedido itemPedido, int id) {
-        String sql = "UPDATE itemspedidos SET cantidad=?, id_producto=?, id_pedido WHERE id = ?";
+	public void editarMesa(mesa mesa, int id) {
+        String sql = "UPDATE mesas SET capacidad=?, estado=? WHERE id = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
-        	parametro.setInt(1, itemPedido.getCantidad());
-			parametro.setInt(2, itemPedido.getId_producto());
-			parametro.setInt(3, itemPedido.getId_pedido());
-            parametro.setInt(4, id);
+        	parametro.setInt(1, mesa.getCapacidad());
+			parametro.setBoolean(2, mesa.isEstado());
+            parametro.setInt(3, id);
             parametro.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -40,8 +39,8 @@ public class itemPedidoDB {
     }
 	
     // Eliminar una propiedad
-    public void eliminarItemPedido(int id) {
-        String sql = "DELETE FROM itemspedidos WHERE id = ?";
+    public void eliminarMesa(int id) {
+        String sql = "DELETE FROM mesas WHERE id = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
             parametro.setInt(1, id);
             parametro.executeUpdate();
@@ -51,18 +50,21 @@ public class itemPedidoDB {
     }
     
     // Obtener lista de propiedades
-    public itemPedido obtenerItemPedido(int id) {
-        String sql = "SELECT * FROM itemspedidos WHERE itemPedido = ?";
+    public mesa obtenerMesa(int id) {
+        String sql = "SELECT * FROM mesas WHERE id_mesa = ?";
         try (PreparedStatement parametro = conexion.prepareStatement(sql)) {
             parametro.setInt(1, id);
             ResultSet rs = parametro.executeQuery();
             if (rs.next()) {
-                return new itemPedido(rs.getInt("cantidad"),rs.getInt("id_producto"),rs.getInt("id_pedido"));
+            	mesa mesa = new mesa();
+            	mesa.setCapacidad(rs.getInt("capacidad"));
+            	mesa.setEstado(rs.getBoolean("estado"));
+                return mesa;
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         return null;
-    }	
+    }
+	
 }
-

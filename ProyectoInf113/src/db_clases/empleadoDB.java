@@ -1,6 +1,8 @@
-package proyecto_cvs;
+package db_clases;
 
 import java.sql.*;
+import proyecto_cvs.empleado;
+
 public class empleadoDB {
 	private Connection conexion;
 	
