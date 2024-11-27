@@ -77,7 +77,7 @@ public class interfaz extends JFrame {
 		
 		JLabel nlbIsAutorized = new JLabel("New label");
 		nlbIsAutorized.setVisible(false);;
-		nlbIsAutorized.setBounds(39, 230, 232, 23);
+		nlbIsAutorized.setBounds(46, 194, 232, 23);
 		contentPane.add(nlbIsAutorized);
 		
 		Tbx_password = new JPasswordField();
@@ -97,7 +97,7 @@ public class interfaz extends JFrame {
 		contentPane.add(btnCliente);
 		
 		JButton btnShow_password = new JButton("");
-		btnShow_password.setIcon(new ImageIcon(interfaz.class.getResource("/Images/show_password.png")));
+		btnShow_password.setIcon(new ImageIcon(interfaz.class.getResource("/Images/hide_password.png")));
 		btnShow_password.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
@@ -128,11 +128,11 @@ public class interfaz extends JFrame {
 	public static void ShowPass(JPasswordField password, JButton boton) {
 		if(password.getEchoChar()=='●') {
 			password.setEchoChar((char) 0);
-			boton.setIcon(new ImageIcon(interfaz.class.getResource("/Images/hide_password.png")));
+			boton.setIcon(new ImageIcon(interfaz.class.getResource("/Images/show_password.png")));
 		}
 		else {
 			password.setEchoChar('●');
-			boton.setIcon(new ImageIcon(interfaz.class.getResource("/Images/show_password.png")));
+			boton.setIcon(new ImageIcon(interfaz.class.getResource("/Images/hide_password.png")));
 		}	
 	}
 }

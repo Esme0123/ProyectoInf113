@@ -67,7 +67,7 @@ public class empleadoDB {
 //        return null;
 //    }
 	
-	  // Busqueda segun propiedad
+	  // Busqueda segun Nombre de empleado
 	  public empleado buscarEmpleado(String name_user) {
 	      String sql = "SELECT * FROM empleados WHERE name_user = ?";
 	      try (PreparedStatement parametro = conexion.prepareStatement(sql)) {

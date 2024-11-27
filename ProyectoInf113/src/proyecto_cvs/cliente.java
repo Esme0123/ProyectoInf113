@@ -27,9 +27,9 @@ public class cliente extends persona{
 	public void setId_persona(int id_persona) {
 		this.id_persona = id_persona;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	
+	public void ocuparMesa() {
+		this.getApellido();
 	}
 
 }
