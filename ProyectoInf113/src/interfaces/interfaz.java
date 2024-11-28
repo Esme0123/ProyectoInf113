@@ -24,6 +24,7 @@ import javax.swing.JFormattedTextField;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import javax.swing.ImageIcon;
+import javax.swing.JTextPane;
 
 public class interfaz extends JFrame {
 
@@ -65,10 +66,10 @@ public class interfaz extends JFrame {
 		contentPane.add(Tbx_user_name);
 		Tbx_user_name.setColumns(10);
 		
-		JLabel nlbTitulo = new JLabel("Nombre_restaurante");
-		nlbTitulo.setFont(new Font("Mistral", Font.BOLD, 20));
+		JLabel nlbTitulo = new JLabel("BITS & GRILLS");
+		nlbTitulo.setFont(new Font("Mistral", Font.BOLD, 30));
 		nlbTitulo.setHorizontalAlignment(SwingConstants.CENTER);
-		nlbTitulo.setBounds(130, 10, 168, 39);
+		nlbTitulo.setBounds(123, 11, 168, 39);
 		contentPane.add(nlbTitulo);
 		
 		JLabel nlbBienvenido = new JLabel("RESTAURANTE");
