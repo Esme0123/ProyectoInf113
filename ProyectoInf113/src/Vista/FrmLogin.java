@@ -24,7 +24,7 @@ public class FrmLogin extends javax.swing.JFrame {
         txtCorreo.setText("info@angelsifuentes.com");
         txtPass.setText("admin");
         barra.setVisible(false);
-        ImageIcon img = new ImageIcon(getClass().getResource("/Img/logo.png"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/images/logo.png"));
         this.setIconImage(img.getImage());
     }
     public class BarraProgreso implements ActionListener {
@@ -137,7 +137,7 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Tw Cen MT", 3, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/iniciar.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/iniciar.png"))); // NOI18N
         jLabel1.setText("Iniciar Sesión");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);

@@ -52,7 +52,7 @@ public final class Sistema extends javax.swing.JFrame {
 
     public Sistema(login priv) {
         initComponents();
-        ImageIcon img = new ImageIcon(getClass().getResource("/Img/logo.png"));
+        ImageIcon img = new ImageIcon(getClass().getResource("/images/logo.png"));
         Image igmEscalada = img.getImage().getScaledInstance(labelLogo.getWidth(), labelLogo.getHeight(), Image.SCALE_SMOOTH);
         Icon icono = new ImageIcon(igmEscalada);
         labelLogo.setIcon(icono);
@@ -228,7 +228,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         btnSala.setBackground(new java.awt.Color(0, 0, 0));
         btnSala.setForeground(new java.awt.Color(255, 255, 255));
-        btnSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/sala.png"))); // NOI18N
+        btnSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sala.png"))); // NOI18N
         btnSala.setText("Salas");
         btnSala.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnSala.setFocusable(false);
@@ -240,7 +240,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         btnVentas.setBackground(new java.awt.Color(0, 0, 0));
         btnVentas.setForeground(new java.awt.Color(255, 255, 255));
-        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/pedidos.png"))); // NOI18N
+        btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pedidos.png"))); // NOI18N
         btnVentas.setText("Pedidos");
         btnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnVentas.setFocusable(false);
@@ -252,7 +252,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         btnConfig.setBackground(new java.awt.Color(0, 0, 0));
         btnConfig.setForeground(new java.awt.Color(255, 255, 255));
-        btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/config.png"))); // NOI18N
+        btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/config.png"))); // NOI18N
         btnConfig.setText("Config");
         btnConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnConfig.setFocusable(false);
@@ -269,7 +269,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         btnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
         btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
-        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/usuarios.png"))); // NOI18N
+        btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios.png"))); // NOI18N
         btnUsuarios.setText("Usuarios");
         btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnUsuarios.setFocusable(false);
@@ -281,7 +281,7 @@ public final class Sistema extends javax.swing.JFrame {
 
         btnPlatos.setBackground(new java.awt.Color(0, 0, 0));
         btnPlatos.setForeground(new java.awt.Color(255, 255, 255));
-        btnPlatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/platos.png"))); // NOI18N
+        btnPlatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/platos.png"))); // NOI18N
         btnPlatos.setText("Platos");
         btnPlatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnPlatos.setFocusable(false);
@@ -333,7 +333,7 @@ public final class Sistema extends javax.swing.JFrame {
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 200, 720));
 
         jLabel38.setFont(new java.awt.Font("Zilla Slab", 3, 48)); // NOI18N
-        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/titulo.png"))); // NOI18N
+        jLabel38.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/titulo.png"))); // NOI18N
         jLabel38.setText("Restaurante la Delicia");
         jLabel38.setFocusable(false);
         jLabel38.setHorizontalTextPosition(javax.swing.SwingConstants.LEFT);
@@ -403,7 +403,7 @@ public final class Sistema extends javax.swing.JFrame {
         txtNombreSala.setBorder(null);
         jPanel10.add(txtNombreSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, 190, 30));
 
-        btnRegistrarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
+        btnRegistrarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GuardarTodo.png"))); // NOI18N
         btnRegistrarSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnRegistrarSalaActionPerformed(evt);
@@ -411,7 +411,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel10.add(btnRegistrarSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 100, 40));
 
-        btnActualizarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+        btnActualizarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Actualizar (2).png"))); // NOI18N
         btnActualizarSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnActualizarSalaActionPerformed(evt);
@@ -419,7 +419,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel10.add(btnActualizarSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 230, 100, 40));
 
-        btnNuevoSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
+        btnNuevoSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevo.png"))); // NOI18N
         btnNuevoSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoSalaActionPerformed(evt);
@@ -427,7 +427,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel10.add(btnNuevoSala, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 300, 100, 40));
 
-        btnEliminarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+        btnEliminarSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
         btnEliminarSala.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarSalaActionPerformed(evt);
@@ -622,7 +622,7 @@ public final class Sistema extends javax.swing.JFrame {
         jScrollPane12.setViewportView(txtComentario);
 
         jLabel11.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/money.png"))); // NOI18N
+        jLabel11.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money.png"))); // NOI18N
         jLabel11.setText("Total a Pagar");
 
         totalMenu.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -644,7 +644,7 @@ public final class Sistema extends javax.swing.JFrame {
             }
         });
 
-        btnEliminarTempPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+        btnEliminarTempPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
         btnEliminarTempPlato.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnEliminarTempPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -737,7 +737,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel25.add(totalFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(910, 390, 120, -1));
 
         jLabel17.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
-        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/money.png"))); // NOI18N
+        jLabel17.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/money.png"))); // NOI18N
         jLabel17.setText("Total a Pagar");
         jPanel25.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 340, -1, -1));
 
@@ -796,7 +796,7 @@ public final class Sistema extends javax.swing.JFrame {
         txtNumMesaFinalizar.setEditable(false);
         jPanel25.add(txtNumMesaFinalizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 450, 240, 30));
 
-        btnPdfPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/pdf.png"))); // NOI18N
+        btnPdfPedido.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pdf.png"))); // NOI18N
         btnPdfPedido.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPdfPedidoActionPerformed(evt);
@@ -1004,7 +1004,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel7.add(jPanel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 420, 470));
 
         jLabel21.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/portada.png"))); // NOI18N
+        jLabel21.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/portada.png"))); // NOI18N
         jPanel7.add(jLabel21, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 100, 620, 470));
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
@@ -1180,7 +1180,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel11.add(txtPrecioPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 170, 170, 30));
 
-        btnGuardarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/GuardarTodo.png"))); // NOI18N
+        btnGuardarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/GuardarTodo.png"))); // NOI18N
         btnGuardarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnGuardarPlatoActionPerformed(evt);
@@ -1188,7 +1188,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel11.add(btnGuardarPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 270, 110, 50));
 
-        btnEditarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/Actualizar (2).png"))); // NOI18N
+        btnEditarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Actualizar (2).png"))); // NOI18N
         btnEditarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditarPlatoActionPerformed(evt);
@@ -1196,7 +1196,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel11.add(btnEditarPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(167, 270, 100, 50));
 
-        btnEliminarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/eliminar.png"))); // NOI18N
+        btnEliminarPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/eliminar.png"))); // NOI18N
         btnEliminarPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEliminarPlatoActionPerformed(evt);
@@ -1204,7 +1204,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
         jPanel11.add(btnEliminarPlato, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 370, 110, 50));
 
-        btnNuevoPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Img/nuevo.png"))); // NOI18N
+        btnNuevoPlato.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/nuevo.png"))); // NOI18N
         btnNuevoPlato.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNuevoPlatoActionPerformed(evt);
@@ -1884,7 +1884,7 @@ public final class Sistema extends javax.swing.JFrame {
         for (int i = 0; i < Listar.size(); i++) {
             int id = Listar.get(i).getId();
             int cantidad = Listar.get(i).getMesas();
-            JButton boton = new JButton(Listar.get(i).getNombre(), new ImageIcon(getClass().getResource("/Img/salas.png")));
+            JButton boton = new JButton(Listar.get(i).getNombre(), new ImageIcon(getClass().getResource("/images/salas.png")));
             boton.setCursor(new Cursor(Cursor.HAND_CURSOR));
             boton.setHorizontalTextPosition(JButton.CENTER);
             boton.setVerticalTextPosition(JButton.BOTTOM);
@@ -1904,7 +1904,7 @@ public final class Sistema extends javax.swing.JFrame {
         for (int i = 1; i <= cant; i++) {
             int num_mesa = i;
             //verificar estado
-            JButton boton = new JButton("MESA N°: " + i, new ImageIcon(getClass().getResource("/Img/mesa.png")));
+            JButton boton = new JButton("MESA N°: " + i, new ImageIcon(getClass().getResource("/images/mesa.png")));
             boton.setHorizontalTextPosition(JButton.CENTER);
             boton.setVerticalTextPosition(JButton.BOTTOM);
             int verificar = pedDao.verificarStado(num_mesa, id_sala);
