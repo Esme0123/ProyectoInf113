@@ -181,13 +181,13 @@ public class pedidoDB {
        }
        return Lista;
    }
-    public void pdfPedido(int id_pedido) {
+    /*public void pdfPedido(int id_pedido) {
         pedido pedido = verPedido(id_pedido);
         List<itemPedido> detalles = verPedidoDetalle(id_pedido);
         generadorPdf.generarPDFPedido(pedido, detalles);
-    }
+    }*/
     
-    /*public void pdfPedido(int id_pedido) {
+    public void pdfPedido(int id_pedido) {
         String fechaPedido = null, usuario = null, total = null,
                 sala = null, num_mesa = null;
         try {
@@ -198,7 +198,7 @@ public class pedidoDB {
             Document doc = new Document();
             PdfWriter.getInstance(doc, archivo);
             doc.open();
-            Image img = Image.getInstance(getClass().getResource("/Img/logo.png"));
+            Image img = Image.getInstance(getClass().getResource("/images/logo.png"));
             //Fecha
             String informacion = "SELECT p.*, s.nombre FROM pedidos p INNER JOIN salas s ON p.id_sala = s.id WHERE p.id = ?";
             try {
@@ -234,7 +234,7 @@ public class pedidoDB {
                 rs = ps.executeQuery();
                 if (rs.next()) {
                     mensaje = rs.getString("mensaje");
-                    Encabezado.addCell("Ruc:    " + rs.getString("ruc") 
+                    Encabezado.addCell("NIT:    " + rs.getString("ruc") 
                             + "\nNombre: " + rs.getString("nombre") 
                             + "\nTeléfono: " + rs.getString("telefono") 
                             + "\nDirección: " + rs.getString("direccion")
@@ -297,7 +297,7 @@ public class pedidoDB {
             doc.add(tabla);
             Paragraph agra = new Paragraph();
             agra.add(Chunk.NEWLINE);
-            agra.add("Total S/: " + total);
+            agra.add("Total Bs.: " + total);
             agra.setAlignment(Element.ALIGN_RIGHT);
             doc.add(agra);
             Paragraph firma = new Paragraph();
@@ -325,7 +325,7 @@ public class pedidoDB {
             }
         }
     }
-    */
+    
     public boolean actualizarEstado (int id_pedido){
         String sql = "UPDATE pedidos SET estado = ? WHERE id = ?";
         try {

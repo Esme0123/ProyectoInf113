@@ -21,8 +21,8 @@ public class FrmLogin extends javax.swing.JFrame {
     public FrmLogin() {
         initComponents();
         this.setLocationRelativeTo(null);
-        txtCorreo.setText("info@angelsifuentes.com");
-        txtPass.setText("admin");
+        txtCorreo.setText("felipe@gmail.com");
+        txtPass.setText("felipe");
         barra.setVisible(false);
         ImageIcon img = new ImageIcon(getClass().getResource("/images/logo.png"));
         this.setIconImage(img.getImage());

@@ -63,9 +63,9 @@ public final class Sistema extends javax.swing.JFrame {
         if (priv.getRol().equals("Asistente")) {
             btnSala.setEnabled(false);
             btnConfig.setEnabled(false);
-            LabelVendedor.setText("Bienvenido");
+            LabelVendedor.setText("Felipe Mejia");
         } else {
-            LabelVendedor.setText("Bienvenido");
+            LabelVendedor.setText("Felipe Mejia");
         }
         txtIdConfig.setVisible(false);
         txtIdHistorialPedido.setVisible(false);
@@ -911,7 +911,7 @@ public final class Sistema extends javax.swing.JFrame {
         jPanel8.add(btnActualizarConfig, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 405, 220, 50));
 
         jLabel27.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jLabel27.setText("Ruc");
+        jLabel27.setText("Nit");
         jPanel8.add(jLabel27, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
 
         txtRucConfig.setBackground(new java.awt.Color(204, 204, 204));
