@@ -63,9 +63,9 @@ public final class Sistema extends javax.swing.JFrame {
         if (priv.getRol().equals("Asistente")) {
             btnSala.setEnabled(false);
             btnConfig.setEnabled(false);
-            LabelVendedor.setText(priv.getNombre());
+            LabelVendedor.setText("Bienvenido");
         } else {
-            LabelVendedor.setText(priv.getNombre());
+            LabelVendedor.setText("Bienvenido");
         }
         txtIdConfig.setVisible(false);
         txtIdHistorialPedido.setVisible(false);
@@ -227,7 +227,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
 
         btnSala.setBackground(new java.awt.Color(0, 0, 0));
-        btnSala.setForeground(new java.awt.Color(255, 255, 255));
+        btnSala.setForeground(new java.awt.Color(45, 45, 45));
         btnSala.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sala.png"))); // NOI18N
         btnSala.setText("Salas");
         btnSala.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -239,7 +239,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
 
         btnVentas.setBackground(new java.awt.Color(0, 0, 0));
-        btnVentas.setForeground(new java.awt.Color(255, 255, 255));
+        btnVentas.setForeground(new java.awt.Color(45, 45, 45));
         btnVentas.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/pedidos.png"))); // NOI18N
         btnVentas.setText("Pedidos");
         btnVentas.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -251,7 +251,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
 
         btnConfig.setBackground(new java.awt.Color(0, 0, 0));
-        btnConfig.setForeground(new java.awt.Color(255, 255, 255));
+        btnConfig.setForeground(new java.awt.Color(45, 45, 45));
         btnConfig.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/config.png"))); // NOI18N
         btnConfig.setText("Config");
         btnConfig.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -268,7 +268,7 @@ public final class Sistema extends javax.swing.JFrame {
         tipo.setForeground(new java.awt.Color(255, 255, 255));
 
         btnUsuarios.setBackground(new java.awt.Color(0, 0, 0));
-        btnUsuarios.setForeground(new java.awt.Color(255, 255, 255));
+        btnUsuarios.setForeground(new java.awt.Color(45, 45, 45));
         btnUsuarios.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/usuarios.png"))); // NOI18N
         btnUsuarios.setText("Usuarios");
         btnUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
@@ -280,7 +280,7 @@ public final class Sistema extends javax.swing.JFrame {
         });
 
         btnPlatos.setBackground(new java.awt.Color(0, 0, 0));
-        btnPlatos.setForeground(new java.awt.Color(255, 255, 255));
+        btnPlatos.setForeground(new java.awt.Color(45, 45, 45));
         btnPlatos.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/platos.png"))); // NOI18N
         btnPlatos.setText("Platos");
         btnPlatos.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));

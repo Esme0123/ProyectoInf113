@@ -111,7 +111,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         btnIniciar.setBackground(new java.awt.Color(0, 0, 0));
         btnIniciar.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        btnIniciar.setForeground(new java.awt.Color(255, 255, 255));
+        btnIniciar.setForeground(new java.awt.Color(0, 191, 255));
         btnIniciar.setText("Login");
         btnIniciar.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         btnIniciar.addActionListener(new java.awt.event.ActionListener() {
@@ -123,7 +123,7 @@ public class FrmLogin extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 0, 0));
         jButton1.setFont(new java.awt.Font("Times New Roman", 3, 14)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setForeground(new java.awt.Color(0, 191, 255));
         jButton1.setText("Salir");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
